@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import os
+
 from jinja2 import Environment
 from jinja2 import FileSystemLoader
 from jinja2 import FileSystemBytecodeCache
@@ -30,3 +32,8 @@ class JinjaRenderer(object):
         else:
             rendered = template.render(context)
         return rendered
+
+_site_content_dir = os.path.join(os.path.dirname(__file__), '../../site_content')
+_template_dir = os.path.join(_site_content_dir, 'templates')
+
+renderer = JinjaRenderer(_template_dir)
