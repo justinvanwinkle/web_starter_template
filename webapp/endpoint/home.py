@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from werkzeug.wrappers import Response
 
-from werkzeug import Response
-
-from lib.render import renderer
+from webapp.lib.render import renderer
 
 
 def homepage(req):
-    return Response(renderer.render('html/landing.html'), mimetype='text/html')
+    return Response(renderer.render("html/landing.html"), mimetype="text/html")

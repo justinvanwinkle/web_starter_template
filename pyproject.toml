@@ -1,0 +1,21 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--tb=short"
+
+[project]
+name = "web_starter_template"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "Jinja2",
+    "Werkzeug",
+    "ruff (>=0.12.0,<0.13.0)",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
